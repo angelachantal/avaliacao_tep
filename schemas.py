@@ -5,7 +5,7 @@ from datetime import datetime
 class ProjetoCreate(BaseModel):
     titulo: str
     descricao: Optional[str] = None
-    priordade: Optional[Literal[1,2,3]] 
+    prioridade: Optional[Literal[1,2,3]] 
     status: Optional[Literal['Planejado', 'Em andamento', 'Concluído', 'Cancelado']]
 
 class Projeto(ProjetoCreate):
