@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import Optional, Literal
 from datetime import datetime
+import uuid
 
 class ProjetoCreate(BaseModel):
     titulo: str
@@ -9,7 +10,7 @@ class ProjetoCreate(BaseModel):
     status: Optional[Literal['Planejado', 'Em andamento', 'Concluído', 'Cancelado']]
 
 class Projeto(ProjetoCreate):
-    id: int
+    id: uuid.UUID
     criado_em: datetime
 
 class ProjetoUpdate(BaseModel):
